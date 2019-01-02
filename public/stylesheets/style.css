@@ -1,0 +1,12 @@
+.card img {
+    min-height: 350px;
+
+}
+.card{
+    min-height: 644px;
+}
+.gallery{
+
+    max-width: 100%;
+    margin: 20px 0px;
+}
