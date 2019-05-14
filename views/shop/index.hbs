@@ -1,7 +1,15 @@
 <div class="row justify-content-center">
+    <div class="col-auto">
+        <div id="success" class="alert alert-success" {{#if noMessages}}style="display: none"{{/if}}>
+            {{successMsg}}
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
     {{# each products}}
         <div class="col-auto">
-            <div class="card border-primary mb-3 " style="width: 22rem">
+            <div class="card border-primary mb-3 gallery-cards" style="width: 22rem">
                 <img src= "{{this.imagePath}}"
                      class="card-img-top image-responsive" alt="...">
 
@@ -9,7 +17,7 @@
                     <h5 class="card-title mx-auto">{{this.title}}</h5>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="badge badge-warning">Price: ${{this.price}}</span>
-                        <!--<button class="btn btn-success"  type="button" style="width: 100px">Buy</button>-->
+                        <!--<button class="btn btn-success"  type="button" style="width: 100px">Add to Cart</button>-->
                     </div>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis debitis
                         eligendi, et excepturi in incidunt ipsam natus nobis
@@ -18,7 +26,7 @@
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <!--<span class="badge badge-warning"> Price: $0.99</span>-->
-                        <button class="btn btn-success btn-block" type="button" style="width: content-box">Buy</button>
+                        <a href="/add-to-cart/{{this._id}}" class="btn btn-success btn-block" >Add to Cart</a>
                     </div>
                 </div>
             </div>

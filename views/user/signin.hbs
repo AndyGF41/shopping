@@ -1,7 +1,7 @@
 <div class="row justify-content-center" >
     <div class="col-md-4 col-md-offset-4">
         <h1> Sing In</h1>
-        {{#if hasError}}
+        {{#if hasErrors}}
             <div class="alert alert-danger">
                 {{# each messages}}
                     <p>{{this}}</p>
@@ -20,5 +20,6 @@
             <input type="hidden" name="_csrf" value="{{csurfToken}}">
             <button type="submit" class="btn btn-primary">Sing In</button>
         </form>
+        <p>Don't Have an account: <a href="/user/signup">Sign Up</a></p>
     </div>
 </div>

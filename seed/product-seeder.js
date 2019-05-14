@@ -45,6 +45,7 @@ var products = [
 done = 0;
 for ( var i = 0 ; i < products.length ; i++ ) {
 	products[ i ].save( function ( err , result ){
+		//wierd logic
 		done++;
 		if ( done == products.length ) {
 			exit();

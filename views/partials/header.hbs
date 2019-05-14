@@ -8,7 +8,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Shopping Cart</a>
+                <a class="nav-link" href="/shopping-cart/">
+                    <i class="fas fa-shopping-cart"></i>
+                    Shopping Cart
+                    {{#if session.cart.totalQty}}<span class="badge badge-secondary">{{session.cart.totalQty}}</span>{{/if}}
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

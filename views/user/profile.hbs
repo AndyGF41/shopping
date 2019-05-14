@@ -1,1 +1,28 @@
 <h1>User Profile</h1>
+
+<div class="container-fluid d-flex flex-column align-items-center">
+    <h2>My Orders</h2>
+
+        {{#each orders}}
+        <div class="card w-50" style="margin-bottom: 10px; margin-top:30px">
+
+            <!--<div class="card-body">-->
+                <ul class="list-group list-group-flush">
+                    {{#each this.items}}
+
+                        <li class="list-group-item d-inline-flex justify-content-between">
+                            {{ this.item.title}}
+                            <span><span class="badge badge-warning">{{this.price}}</span> |{{this.qty}} Units</span>
+
+                        </li>
+                    {{/each}}
+
+                </ul>
+
+            <!--</div>-->
+            <div class="card-footer">
+                <strong>Total: ${{this.cart.totalPrice}}</strong>
+            </div>
+        </div>
+        {{/each}}
+</div>

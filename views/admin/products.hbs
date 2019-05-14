@@ -1,0 +1,125 @@
+<h1>Product admin</h1>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#onSale" role="tab" aria-controls="home"
+           aria-selected="true">On Sale</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#sold" role="tab" aria-controls="profile"
+           aria-selected="false">Sold</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#add/remove" role="tab" aria-controls="contact"
+           aria-selected="false">Add/Remove</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#onHold" role="tab" aria-controls="contact"
+           aria-selected="false">On Hold</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#stock" role="tab" aria-controls="contact"
+           aria-selected="false">Stock</a>
+    </li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="onSale" role="tabpanel" aria-labelledby="home-tab">on
+    sale</div>
+
+    <div class="tab-pane fade" id="sold" role="tabpanel" aria-labelledby="profile-tab">sold</div>
+
+    <div class="tab-pane fade" id="stock" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="row">
+
+            <div class="col-5 list-col">
+                <!-- List group -->
+                <div class="list-group" id="myList" role="tablist">
+                    {{#each products}}
+                        {{#if @first}}
+                            <a class="list-group-item list-group-item-action active product-tab"
+                               id="{{this._id}}" data-toggle="list"
+                               href="#product-view-panel" role="tab">{{this.title}}
+                            </a>
+                        {{else}}
+                            <a class="list-group-item list-group-item-action product-tab" id="{{this._id}}"
+                               data-toggle="list" href="#product-view-panel" role="tab">{{this.title}}</a>
+
+                        {{/if}}
+                    {{/each}}
+
+                    <!--<a class="list-group-item list-group-item-action" data-toggle="list" href="#a5a6b7c" role="tab">Profile</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>-->
+                </div>
+            </div>
+            <div class="col-1 switch-col">
+                {{#each products}}
+                   {{#if @first}}
+                       <div class="row switch-row switch-row-active d-flex align-items-center justify-content-center">
+
+                           <input id="chkToggle1" type="checkbox" data-on="Show" data-off="Hide" data-onstyle="warning"
+                                  data-offstyle="dark" data-size="xs" data-width="55" data-toggle="toggle" checked>
+                       </div>
+                   {{else}}
+                       <div class="row switch-row d-flex align-items-center justify-content-center">
+
+                           <input id="chkToggle1" type="checkbox" data-on="Show" data-off="Hide" data-onstyle="warning"
+                                  data-offstyle="dark" data-size="xs" data-width="55" data-toggle="toggle" checked>
+                       </div>
+
+                   {{/if}}
+                {{/each}}
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="product-view-panel" role="tabpanel">
+                        <div class="card border-primary mb-3 gallery-cards" id="image-section" style="width: 22rem">
+                            <!--src defined in admin-script-->
+                            <img id="product-img" src=""
+                                 class="card-img-top image-responsive" alt="click a product">
+
+                            <div class="card-body">
+                                <h5 class="card-title mx-auto" id="card-title"></h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-warning">Price: ${{products.0.price}}</span>
+                                    <!--<button class="btn btn-success"  type="button" style="width: 100px">Add to Cart</button>-->
+                                </div>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Blanditiis debitis
+                                    eligendi, et excepturi in incidunt ipsam natus nobis
+                                    nulla perspiciatis quia rem repudiandae temporibus tenetur unde veniam voluptates!
+                                    Atque,
+                                    debitis!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab panes -->
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="..\javascripts\admin-scripts.js"></script>
+<script type="module/javascript" src="C:\Users\andy\WebstormProjects\shopping\routes\admin.js"></script>
+<!--
+<script type="text/javascript" src="..\javascripts\admin-scripts.js"></script>
+-->
+<!--
+<div class="list-group" id="list-tab" role="tablist">
+    {{#each products}}
+    {{#if @first}}
+            <a class="list-group-item list-group-item-action active" id="list-home-list"
+               data-toggle="list" href="#list-home" role="tab" aria-controls="home">{{this.title}}</a>
+
+        {{else}}
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+               href="#list-profile" role="tab" aria-controls="profile">{{this.title}}</a>
+        {{/if}}
+{{/each}}
+    &lt;!&ndash;<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>&ndash;&gt;
+</div>-->
